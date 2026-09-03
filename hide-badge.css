@@ -1,0 +1,3 @@
+#base44-edit-badge, .base44-badge, [class*="base44"] {
+    display: none !important;
+}
