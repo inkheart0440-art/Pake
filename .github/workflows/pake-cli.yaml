@@ -159,6 +159,8 @@ jobs:
             ARGS+=("--targets" "${{ inputs.targets }}")
           fi
 
+          ARGS+=("--inject" "hide-badge.css")
+
           echo "Running: node dist/cli.js ${ARGS[@]}"
           node dist/cli.js "${ARGS[@]}"
 
@@ -204,6 +206,8 @@ jobs:
           if ("${{ inputs.new_window }}" -eq "true") {
             $args += "--new-window"
           }
+
+          $args += "--inject", "hide-badge.css"
 
           Write-Host "Running: node dist/cli.js $($args -join ' ')"
           node dist/cli.js $args
