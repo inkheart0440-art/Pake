@@ -219,7 +219,7 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: ${{ inputs.name }}-macOS
-          path: ${{ inputs.name }}.dmg
+          path: src-tauri/target/release/bundle/dmg/*.dmg
           retention-days: 3
 
       - name: Upload DEB (Linux)
@@ -227,7 +227,7 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: ${{ inputs.name }}-Linux-deb
-          path: ${{ inputs.name }}.deb
+          path: src-tauri/target/release/bundle/deb/*.deb
           retention-days: 3
           if-no-files-found: ignore
 
@@ -236,7 +236,7 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: ${{ inputs.name }}-Linux-AppImage
-          path: ${{ inputs.name }}.AppImage
+          path: src-tauri/target/release/bundle/appimage/*.AppImage
           retention-days: 3
           if-no-files-found: ignore
 
@@ -245,7 +245,7 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: ${{ inputs.name }}-Linux-rpm
-          path: ${{ inputs.name }}.rpm
+          path: src-tauri/target/release/bundle/rpm/*.rpm
           retention-days: 3
           if-no-files-found: ignore
 
@@ -254,7 +254,7 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: ${{ inputs.name }}-Linux-zst
-          path: ${{ inputs.name }}-*.pkg.tar.zst
+          path: src-tauri/target/release/bundle/zst/*.pkg.tar.zst
           retention-days: 3
           if-no-files-found: ignore
 
@@ -263,7 +263,7 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: ${{ inputs.name }}-Windows
-          path: ${{ inputs.name }}.msi
+          path: src-tauri/target/release/bundle/msi/*.msi
           retention-days: 3
 
       - name: Rust cache store
